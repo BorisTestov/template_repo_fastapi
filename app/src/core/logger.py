@@ -10,9 +10,7 @@ def setup_logging():
     stream_handler = logging.StreamHandler()
     stream_handler.setFormatter(formatter)
 
-    logging.basicConfig(
-        level=log_settings.level, handlers=[stream_handler]
-    )
+    logging.basicConfig(level=log_settings.level, handlers=[stream_handler])
 
 
 def get_logger(name):

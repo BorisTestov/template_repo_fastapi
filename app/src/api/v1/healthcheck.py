@@ -1,7 +1,6 @@
 from http import HTTPStatus
 
 from fastapi import APIRouter
-
 from models.healthcheck import HealthCheck
 
 router = APIRouter()

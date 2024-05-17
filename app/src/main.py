@@ -1,11 +1,10 @@
 import uvicorn
-from fastapi import FastAPI
-from fastapi.responses import ORJSONResponse
-from starlette.middleware.cors import CORSMiddleware
-
 from api.router import router
 from core.logger import get_logger
 from core.settings import app_settings
+from fastapi import FastAPI
+from fastapi.responses import ORJSONResponse
+from starlette.middleware.cors import CORSMiddleware
 
 logger = get_logger(__name__)
 
@@ -15,12 +14,7 @@ def create_app():
         docs_url="/openapi",
         openapi_url="/openapi.json",
         default_response_class=ORJSONResponse,
-        servers=[
-            {
-                "url": f"http://127.0.0.1",
-                "description": "Localhost"
-            }
-        ]
+        servers=[{"url": "http://127.0.0.1", "description": "Localhost"}],
     )
 
     app.add_middleware(
