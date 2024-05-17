@@ -13,9 +13,7 @@
 
 # Env variables
 
-| Name               | Description                                                         | Is optional | Default |
-|--------------------|---------------------------------------------------------------------|-------------|---------|
-| LOG_LEVEL          | Log level. One of ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"] | True        | INFO    |
-| LOG_BASE_FILENAME  | Base filename (prefix) for log files                                | True        | log     |
-| LOG_DIRECTORY      | Directory to store logs. Auto created                               | True        | logs    |
-| LOG_ROTATION_VALUE | How much log files to store. One log file == one app run            | True        | 5       |
+| Name      | Description                                                         | Is optional | Default |
+|-----------|---------------------------------------------------------------------|-------------|---------|
+| LOG_LEVEL | Log level. One of ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"] | True        | INFO    |
+| APP_PORT  | FastAPI port                                                        | True        | 8000    |

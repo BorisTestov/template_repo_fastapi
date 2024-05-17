@@ -7,9 +7,6 @@ load_dotenv(find_dotenv(".env"))
 
 class LogSettings(BaseSettings):
     level: str = "INFO"
-    base_filename: str = Field(default="log", min_length=1)
-    directory: str = Field(default="logs", min_length=1)
-    rotation_value: int = Field(default=5, ge=1)
 
     @field_validator("level")
     @classmethod
@@ -26,4 +23,12 @@ class LogSettings(BaseSettings):
         env_prefix = "LOG_"
 
 
+class AppSettings(BaseSettings):
+    port: int = Field(default=8000, ge=1, le=65535)
+
+    class Config:
+        env_prefix = "APP_"
+
+
 log_settings = LogSettings()
+app_settings = AppSettings()
